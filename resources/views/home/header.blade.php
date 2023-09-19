@@ -1,3 +1,13 @@
+<style>
+   #logincss{
+      color: rgb(247, 68, 78);
+     
+   }
+   .log{
+      font-family: 'Courier New', Courier, monospace;
+   }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <header class="header_section">
             <div class="container">
                <nav class="navbar navbar-expand-lg custom_nav-container ">
@@ -42,14 +52,15 @@
                         </x-app-layout>
                         </li>
                         @else
-                        <li class="nav-item">
-                           <a class="btn btn-primary" href="{{route('login')}}" id="logincss">Login</a>
+                        <li class="nav-item" >
+                          
+                           &nbsp &nbsp &nbsp &nbsp<a class="fas fa-user-plus" href="{{route('login')}}" id="logincss"> <span class="log">Login</span> </a>
                         </li>
                         <!-- end login btn-->
 
                         <!-- start register btn-->
                         <li class="nav-item">
-                           <a class="btn btn-success" href="{{route('register')}}">Register</a>
+                           <a class="fas fa-sign-in-alt" href="{{route('register')}} " id="logincss"> <span class="log">Register</span> </a>
                         </li>
                         <!-- end register btn-->
                         @endauth

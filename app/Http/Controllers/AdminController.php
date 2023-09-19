@@ -37,7 +37,9 @@ class AdminController extends Controller
         return view('admin.product',compact('category'));
     }
    
-    
+     /**
+     * add product.
+     */
 
     public function add_product(Request $request)
     {
@@ -54,17 +56,60 @@ class AdminController extends Controller
                $imagename = time() . '.' . $image->getClientOriginalExtension();
                $request->image->move('product', $imagename);
                $product->image=$imagename;
-
-
-
-
-        
-
-
-
                $product->save();
                return redirect()->back();
     }
+      /**
+     * show product.
+     */
+
+     public function show_product()
+     {
+        $product = product::all();
+        return view('admin.show_product',compact('product'));
+     }
+ /**
+     * edit product.
+     */
+public function edit_product($id)
+{
+$category = Category::all();
+$product = product::find($id);
+return view('admin.edit_product',compact('product','category'));
+}
+     
+ /**
+     * update product.
+     */
+    public function update_product(Request $request ,$id)
+    {
+        $product = product::find($id);
+               $product->title = $request->title;
+               $product->description = $request->description;
+               $product->price = $request->price;
+               $product->quantity = $request->quantity;
+               $product->discount_price = $request->discount_price;
+               $product->category=$request->category;
+
+               $image = $request->image;
+               $imagename = time() . '.' . $image->getClientOriginalExtension();
+               $request->image->move('product', $imagename);
+               $product->image=$imagename;
+               $product->save();
+               return redirect()->back();
+    }
+    
+    
+    /**
+     * Delete product.
+     */
+    public function delete_product($id)
+    {
+        $data = product::find($id);
+        $data->delete();
+        return redirect()->back()->with('message', 'product deteted successfully');
+    }
+
     /**
      * Remove the resource from storage.
      */
