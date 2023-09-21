@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Cart;
 
 class HomeController extends Controller
 {
@@ -39,51 +40,48 @@ class HomeController extends Controller
 
 
     /**
-     * Show the form for creating the resource.
+     * product_details.
      */
-    public function create(): never
+    public function product_details($id)
     {
-        abort(404);
+        $product = product::find($id);
+        return view('home.product_details',compact('product'));
     }
 
 
     /**
-     * Store the newly created resource in storage.
+     * add_cart.
      */
-    public function store(Request $request): never
+    public function add_cart(Request $request ,$id)
     {
-        abort(404);
+        if(Auth::id()){
+$user = Auth::user();
+$product = product::find($id);
+$cart = new cart;
+$cart->name = $user->name;
+$cart->email = $user->email;
+$cart->phone = $user->phone;
+$cart->address = $user->address;
+$cart->user_id = $user->id;
+$cart->product_title = $product->title;
+if($product->discount_price!=null){
+    $cart->price = $product->discount_price * $request->quantity ;
+}
+else{
+    $cart->price =$product->price * $request->quantity;
+}
+$cart->price = $product->price  * $request->quantity;
+$cart->image = $product->image;
+$cart->product_id = $product->id;
+$cart->quantity = $request->quantity;
+$cart->save();
+return redirect()->back();
+
+        }
+        else{
+            return redirect('login');
+        }
     }
 
-    /**
-     * Display the resource.
-     */
-    public function show()
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the resource.
-     */
-    public function edit()
-    {
-        //
-    }
-
-    /**
-     * Update the resource in storage.
-     */
-    public function update(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Remove the resource from storage.
-     */
-    public function destroy(): never
-    {
-        abort(404);
-    }
 }
