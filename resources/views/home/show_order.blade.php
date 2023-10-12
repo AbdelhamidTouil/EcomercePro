@@ -25,46 +25,41 @@
       <div class="hero_area">
          <!-- header section strats -->
        @include('home.header')
-    
-         <!-- end header section -->
-       
-      
-     <div class="container">
+       <div>
         <table class="table">
             <tr>
-                <th> product image</th>
-                <th> Product Title</th>
-                <th>product quantity</th>
-                <th>product price</th>
-                <th>Action</th>
-                
+                <th>Image</th>
+                <th>Product Title</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Payment Status</th>
+                <th>Delivery Status</th>
+                <th>Cancel Order</th>
             </tr>
-            <?php $totalprice=0; ?>
-@foreach($cart as $cart)
+         @foreach($order as $order)
             <tr>
-                <td> <img style="width:50px" src="/product/{{$cart->image}}" alt="" srcset=""></td>
-                <td>{{$cart->product_title}}</td>
-                <td>{{$cart->quantity}}</td>
-                <td>{{$cart->price}}</td>
-                <td> <a class="btn btn-danger" href="{{url('remove_cart',$cart->id)}}">Delete</a></td>
+               <td><img style="width: 100px" src="/product/{{$order->image}}" alt=""></td>
+                <td>{{$order->product_title}}</td>
+                <td>{{$order->quantity}}</td>
+                <td>{{$order->price}}</td>
+                <td>{{$order->payment_status}}</td>
+                <td>{{$order->delivery_status}}</td>
+                <td>
+                  @if ($order->delivery_status=='proccessing')
+                  <a  onclick="return confirm('Are you shur to cancel the order')"  class="btn btn-danger" href="{{url('cancel_order',$order->id)}}">Cancel</a>
+                  @else
+                      <p>Not allowed</p>
+                  @endif
+               </td>
             </tr>
-            <?php $totalprice=$totalprice + $cart->price ?>
-
             @endforeach
-            
         </table>
-       <center> <div> <h2> Total Price ${{$totalprice}}</h2></div></center>
-     </div>
-     <div>
-      <h1>proceed to oreder</h1>
-      <a class="btn btn-primary" href="{{url('cash_order')}}">Cash on Delevery</a>
-      <a class="btn btn-primary"  href="{{url('stripe',$totalprice)}}"> Pay using card</a>
-     </div>
-    </div>
+       </div>
+        </div>
       <!-- footer start -->
       @include('home.footer')
       <!-- footer end -->
-   
+     
       <!-- jQery -->
       <script src="home/js/jquery-3.4.1.min.js"></script>
       <!-- popper js -->

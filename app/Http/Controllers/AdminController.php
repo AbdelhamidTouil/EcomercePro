@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Order;
+use PDF;
+
+use App\Notifications\SendEmailNotification;
+use Illuminate\Support\Facades\Notification;
+
 
 class AdminController extends Controller
 {
@@ -119,4 +125,74 @@ return view('admin.edit_product',compact('product','category'));
         $data->delete();
         return redirect()->back()->with('message', 'Category deteted successfully');
     }
+
+      /**
+     * Order.
+     */
+    public function order()
+    {
+        $order = order::all();
+        return view('admin.order',compact('order'));
+    }
+  /**
+     * delivered.
+     */
+    public function delivered($id)
+    {
+        $order = order::find($id);
+        $order->delivery_status = "DELIVERED";
+        $order->payment_status = "PAID";
+
+        $order->save();
+        return redirect()->back();
+        
+    }
+
+ /**
+     * pdf
+     */
+    public function pdf($id)
+    {
+        $order = order::find($id);
+        $pdf=PDF::loadView('admin.pdf',compact('order'));
+        
+        return $pdf->download('order_details.pdf');
+    }
+    
+
+     /**
+     * Send Email
+     */
+    public function Send_email($id)
+    {
+        $order =order::find($id);
+        return view('admin.email_info',compact('order'));
+    }
+
+      /**
+     * Send User Email
+     */
+    public function Send_user_email( Request $request,$id)
+    {
+        $order =order::find($id);
+        $details = [
+'greeting' => $request->greeting,
+'first_ligne' => $request->first_ligne,
+'body' => $request->bidy,
+'button' => $request->button,
+'url' => $request->url,
+'last_ligne' => $request->last_ligne,
+        ];
+        Notification::send($order,new sendEmailNotification($details));
+        return redirect()->back();
+    }
+
+    public function search(Request $request)
+    {
+$searchText = $request->search;
+$order =order::where('name','LIKE',"$searchText%")->get();
+return view('admin.order',compact('order'));
+
+    }
+
 }

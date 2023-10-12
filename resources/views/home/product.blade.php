@@ -47,10 +47,7 @@
                   </div>
                </div>
             @endforeach
-            <span>
-               {!! $product->appends(request()->query())->links('pagination::bootstrap-5') !!}
-               
-            </span>
+         
             </div>
             
          </div>
