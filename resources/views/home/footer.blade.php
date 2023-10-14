@@ -7,9 +7,9 @@
                         <a href="#"><img width="210" src="images/logo.png" alt="#" /></a>
                       </div>
                       <div class="information_f">
-                        <p><strong>ADDRESS:</strong> 28 White tower, Street Name New York City, USA</p>
-                        <p><strong>TELEPHONE:</strong> +91 987 654 3210</p>
-                        <p><strong>EMAIL:</strong> yourmain@gmail.com</p>
+                        <p><strong>ADDRESS:</strong> 48 OUJDA, MAROC</p>
+                        <p><strong>TELEPHONE:</strong> +212 627433447</p>
+                        <p><strong>EMAIL:</strong> abdelhamidtouil59@gmail.com</p>
                       </div>
                    </div>
                </div>
@@ -36,9 +36,9 @@
                         <ul>
                            <li><a href="#">Account</a></li>
                            <li><a href="#">Checkout</a></li>
-                           <li><a href="#">Login</a></li>
-                           <li><a href="#">Register</a></li>
-                           <li><a href="#">Shopping</a></li>
+                           <li><a href="{{url('login')}}">Login</a></li>
+                           <li><a href="{{url('register')}}">Register</a></li>
+                           <li><a href="{{url('products')}}">Shopping</a></li>
                            <li><a href="#">Widget</a></li>
                         </ul>
                      </div>
@@ -69,9 +69,10 @@
          </div>
       </footer>
       <div class="cpy_">
-         <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
+         <p class="mx-auto">© 2023 All Rights Reserved By <a href="#"></a><br>
          
-            Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+            Distributed By <a href="#" target="_blank">Abdelhamid touil</a>
          
          </p>
       </div>
+      @include('home.footer_links')
