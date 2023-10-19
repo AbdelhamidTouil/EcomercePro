@@ -12,11 +12,10 @@
                         </h2>
                      </div>
                      <p style="margin-top: 20px;margin-bottom: 30px;">
-                        Vitae fugiat laboriosam officia perferendis provident aliquid voluptatibus dolorem, fugit ullam sit earum id eaque nisi hic? Tenetur commodi, nisi rem vel, ea eaque ab ipsa, autem similique ex unde!
+                        In the modern fashion industry, gone are the days of seasonal drops. Designers are giving us new fashion arrivals to look forward to all year long, with goodies landing in stores and online every week—from got-to-have-it handbags to wear-forever dresses. Here we round up our favorite new fashion items of the week to shop now before they’re inevitably gone.
                      </p>
-                     <a href="">
-                     Shop Now
-                     </a>
+                     <a href="{{url('products')}}">Shop Now </a>
+                   
                   </div>
                </div>
             </div>

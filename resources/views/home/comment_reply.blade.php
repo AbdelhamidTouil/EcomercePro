@@ -13,14 +13,16 @@
     <h1 style="font-size: 20px;padding-bottom:20px;">All Comment</h1>
  
  @foreach($comment as $comment)
-    <div>
+
+    <div style=" max-height: 100px;
+    overflow: auto;">
        
        <b>{{$comment->name}}</b>
        <p>{{$comment->comment}}</p>
-       <a style="color: blue" href="javascript::void(0);" onclick="reply(this)" data-Commentid="{{$comment->id}}">Reply</a>
+       <a style="color: blue; padding-left:6ch" href="javascript::void(0);" onclick="reply(this)" data-Commentid="{{$comment->id}}">Reply</a>
        @foreach($reply as $rep)
        @if($rep->comment_id==$comment->id)
-       <div style="padding: 3%; padding-bottom:10px;">
+       <div style="padding: 3%;">
           <b>{{$rep->name}}</b>
           <p>{{$rep->reply}}</p>
           <a style="color: blue" href="javascript::void(0);" onclick="reply(this)" data-Commentid="{{$comment->id}}">Reply</a>
@@ -30,6 +32,7 @@
        @endforeach
       
     </div>
+   
   @endforeach
    
     <div style="display: none" class="replyDiv ">

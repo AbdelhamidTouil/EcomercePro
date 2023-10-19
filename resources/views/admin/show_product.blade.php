@@ -49,7 +49,7 @@
                     <tr>
                         <td> <img class="img_product" src="product/{{$product->image}}" alt="" srcset=""></td>
                         <td>{{$product->title}}</td>
-                        <td>{{$product->description}}</td>
+                        <td> <p style="width: 50px">{{$product->description}}</p></td>
                         <td>{{$product->category}}</td>
                         <td>{{$product->quantity}}</td>
                         <td>{{$product->price}}</td>

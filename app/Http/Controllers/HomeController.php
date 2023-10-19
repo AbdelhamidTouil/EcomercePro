@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Pagination\LengthAwarePaginator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 
@@ -56,7 +57,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $product = product::paginate(4);
+        $product = product::paginate(10);
         $comment = comment::orderby('id','desc')->get();
         $reply = reply::all();
         
@@ -102,7 +103,8 @@ class HomeController extends Controller
             $cart->price = $product->price * $cart->quantity;
         }
         $cart->save();
-        return redirect()->back()->with('message','product added to cart successfuly');
+        Alert::success('Product Added Successfully','We have added product to the cart');
+        return redirect()->back();
                 }
                 else{
                     $cart = new cart;
@@ -141,7 +143,7 @@ class HomeController extends Controller
             $cart->product_id = $product->id;
             $cart->quantity = $request->quantity;
             $cart->save();
-            return redirect()->back()->with('message','product added to cart successfuly');
+            return redirect()->back();
         } 
         else 
         {

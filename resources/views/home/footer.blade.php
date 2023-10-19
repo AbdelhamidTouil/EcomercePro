@@ -21,11 +21,10 @@
                      <div class="widget_menu">
                         <h3>Menu</h3>
                         <ul>
-                           <li><a href="#">Home</a></li>
+                           <li><a href="{{url('/')}}">Home</a></li>
                            <li><a href="#">About</a></li>
-                           <li><a href="#">Services</a></li>
-                           <li><a href="#">Testimonial</a></li>
-                           <li><a href="#">Blog</a></li>
+                        
+                           <li><a href="#">Order</a></li>
                            <li><a href="#">Contact</a></li>
                         </ul>
                      </div>
@@ -34,8 +33,7 @@
                      <div class="widget_menu">
                         <h3>Account</h3>
                         <ul>
-                           <li><a href="#">Account</a></li>
-                           <li><a href="#">Checkout</a></li>
+                          
                            <li><a href="{{url('login')}}">Login</a></li>
                            <li><a href="{{url('register')}}">Register</a></li>
                            <li><a href="{{url('products')}}">Shopping</a></li>
