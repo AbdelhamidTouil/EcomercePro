@@ -32,10 +32,13 @@ class HomeController extends Controller
      */
     public function redirect()
     {
+       
         $usertype = Auth::user()->usertype;
+        
         $product = product::all();
         if ($usertype == '1') {
             $totalProduct = product::all()->count();
+            
             $totalOrder = order::all()->count();
             $totalUser = user::all()->count();
             $order = order::all();
@@ -51,12 +54,16 @@ class HomeController extends Controller
             $reply = reply::all();
             return view('home.userpage',compact('product','comment','reply'));
         }
+      
+        
+       
     }
     /**
      * index.
      */
     public function index()
     {
+        
         $product = product::paginate(10);
         $comment = comment::orderby('id','desc')->get();
         $reply = reply::all();

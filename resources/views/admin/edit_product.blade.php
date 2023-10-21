@@ -4,7 +4,7 @@
 <head>
     <style>
         .img_product{
-            width: 100px;
+            width: 70px;
         }
      </style>
     <!-- Required meta tags -->
@@ -13,6 +13,9 @@
 <style>
     #title_color {
         color: white;
+    }
+    .input{
+        color: black
     }
  
 </style>
@@ -24,10 +27,8 @@
                 <div class="card-body card-body-padding d-flex align-items-center justify-content-between">
                     <div class="ps-lg-1">
                         <div class="d-flex align-items-center justify-content-between">
-                            <p class="mb-0 font-weight-medium me-3 buy-now-text">Free 24/7 customer support, updates, and
-                                more with this template!</p>
-                            <a href="https://www.bootstrapdash.com/product/corona-free/?utm_source=organic&utm_medium=banner&utm_campaign=buynow_demo"
-                                target="_blank" class="btn me-2 buy-now-btn border-0">Get Pro</a>
+                            
+                            
                         </div>
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
@@ -50,64 +51,69 @@
             <div class="content-wrapper">
                 <!-- start product  -->
                 
-                <div >
 
-                    <h2 class="h2">Add Product</h2>
-                    <form action="{{url('update_product',$product->id)}}" method="post" enctype="multipart/form-data">
-                        @csrf
-                    <div class="">
-                        <label for=""  class="form-label">Product Title</label> 
-                        <input type="text" class="form-control" id="title_color" name="title" value="{{$product->title}}" Required>
+                <!-- -->
+                <form action="{{url('update_product',$product->id)}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                <div class="container-fluid px-1 py-5 mx-auto">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                            
+                           
+                            <div class="card">
+                                
+                                <form class="form-card" onsubmit="event.preventDefault()">
+                                    <div class="row justify-content-between text-left">
+                                        <div class="form-group col-sm-6 flex-column d-flex"> 
+                                            <label class="form-control-label px-3">Product title<span class="text-danger"> *</span></label> 
+                                            <input class="input"  type="text"  name="title" value="{{$product->title}}" onblur="validate(1)"> </div>
+                                        <div class="form-group col-sm-6 flex-column d-flex">
+                                             <label class="form-control-label px-3">Product price<span class="text-danger"> *</span></label> 
+                                             <input class="input" type="number"  name="price" min="1" value="{{$product->price}}" onblur="validate(2)"> </div>
+                                    </div>
+                                    <div class="row justify-content-between text-left">
+                                        <div class="form-group col-sm-6 flex-column d-flex"> 
+                                            <label class="form-control-label px-3">Discount price<span class="text-danger"> *</span></label>
+                                             <input class="input" type="number" min="1"  name="discount_price" value="{{$product->discount_price}}" onblur="validate(3)">
+                                             </div>
+                                        <div class="form-group col-sm-6 flex-column d-flex">
+                                             <label class="form-control-label px-3">Quantity<span class="text-danger"> *</span></label>
+                                              <input class="input" type="number" min="1"  name="quantity" value="{{$product->quantity}}" onblur="validate(4)">
+                                             </div>
+                                    </div>
+                                    <div class="row justify-content-between text-left">
+                                        <div class="form-group col-sm-6 flex-column d-flex">
+                                             <label class="form-control-label px-3">Category<span class="text-danger"> *</span></label> 
+                                             <select class="input" name="category" required="">
+                                                <option value="{{$product->category}}" selected="">{{$product->category}}</option>
+                                                @foreach($category as $category)
+                                                <option value="{{$category->category_name}}" selected="">{{$category->category_name}}</option>
+                                                 
+                                             @endforeach
+                                            </select>
+                                         </div>
+                                         <div class="form-group col-sm-6 flex-column d-flex">
+                                            <label class="form-control-label px-3">Current Image<span class="text-danger"> *</span></label>
+                                            <img class="img_product" src="product/{{$product->image}}" alt="" srcset="">
+                                            <label class="form-control-label px-3">Product Image<span class="text-danger"> *</span></label>
+                                             <input class="input" type="file"  name="image" onblur="validate(4)">
+                                            </div>
+                                    </div>
+                                    <div class="row justify-content-between text-left">
+                                        <div class="form-group col-12 flex-column d-flex">
+                                             <label class="form-control-label px-3"> Product Description<span class="text-danger"> *</span></label>
+                                              <input class="input" type="text"  name="description" value="{{$product->description}}" onblur="validate(6)"> </div>
+                                    </div>
+                                    <div class="row justify-content-end">
+                                        <div class="form-group col-sm-6"> <button type="submit" class="btn btn-primary"> Add Product</button> </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-
-                    <div>
-                        <label for=""  class="form-label">Product description</label>
-                        <input type="text" class="form-control"  id="title_color" name="description" value="{{$product->description}}">
-                    </div>
-
-                    <div>
-                        <label for=""  class="form-label">Product price</label>
-                        <input type="number" class="form-control"   id="title_color" name="price" value="{{$product->price}}">
-                    </div>
-
-                    <div>
-                        <label for=""  class="form-label">Discount price</label>
-                        <input type="number"  class="form-control" id="title_color" name="discount_price" value="{{$product->discount_price}}">
-                    </div>
-
-
-                    <div>
-                        <label for=""  class="form-label">Product quantity</label>
-                        <input type="number" class="form-control"  id="title_color" min="0" name="quantity" value="{{$product->quantity}}">
-                    </div>
-
-                    <div>
-                        <label for=""  class="form-label">Product Category</label>
-                       
-                        <select name="category" required="">
-                            <option value="{{$product->category}}" selected="">{{$product->category}}</option>
-                            @foreach($category as $category)
-                            <option value="{{$category->category_name}}" selected="">{{$category->category_name}}</option>
-                             
-                         @endforeach
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for=""  class="form-label">Current Image</label>
-                        <img class="img_product" src="product/{{$product->image}}" alt="" srcset="">
-                    </div>
-
-                    <div>
-                        <label for=""  class="form-label"> Change Product Image</label>
-                        <input type="file" class="form-control" name="image">
-                    </div>
-
-                    <div>
-                        
-                        <input type="submit" class="btn btn-primary"  value="Add product">
-                    </div>
-                </form>
+                </div>
+            </form>
+                <!-- -->
                 </div>
                 <!-- end product title -->
 

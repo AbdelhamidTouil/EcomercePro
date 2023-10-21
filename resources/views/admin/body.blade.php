@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <div class="main-panel">
           <div class="content-wrapper">
           
@@ -14,7 +15,7 @@
                       </div>
                       <div class="col-3">
                         <div class="icon icon-box-success ">
-                          <span class="mdi mdi-arrow-top-right icon-item"></span>
+                          <i class="fa-brands fa-product-hunt"></i>
                         </div>
                       </div>
                     </div>
@@ -54,7 +55,7 @@
                       </div>
                       <div class="col-3">
                         <div class="icon icon-box-danger">
-                          <span class="mdi mdi-arrow-bottom-left icon-item"></span>
+                          <i class="fa-solid fa-users"></i>
                         </div>
                       </div>
                     </div>
@@ -74,7 +75,7 @@
                       </div>
                       <div class="col-3">
                         <div class="icon icon-box-success ">
-                          <span class="mdi mdi-arrow-top-right icon-item"></span>
+                          <i class="fa-solid fa-minus"></i>
                         </div>
                       </div>
                     </div>
@@ -95,7 +96,8 @@
                       </div>
                       <div class="col-3">
                         <div class="icon icon-box-success ">
-                          <span class="mdi mdi-arrow-top-right icon-item"></span>
+                         
+                          <i class="fa-solid fa-check"></i>
                         </div>
                       </div>
                     </div>
@@ -116,7 +118,7 @@
                       </div>
                       <div class="col-3">
                         <div class="icon icon-box-success ">
-                          <span class="mdi mdi-arrow-top-right icon-item"></span>
+                          <i class="fa-solid fa-truck"></i>
                         </div>
                       </div>
                     </div>
@@ -133,8 +135,8 @@
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2021</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin template</a> from Bootstrapdash.com</span>
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Abdelhamid Touil 2023</span>
+            
             </div>
           </footer>
           <!-- partial -->
