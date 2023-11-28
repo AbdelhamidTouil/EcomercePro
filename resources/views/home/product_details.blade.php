@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="{{asset('home/css/bootstrap.css')}}" />
    <body>
       <div class="hero_area">
          <!-- header section strats -->

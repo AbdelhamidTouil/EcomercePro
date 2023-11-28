@@ -1,7 +1,8 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-         <!--   <x-authentication-card-logo /> -->
+         
+         <a class="navbar-brand" href="#"><img width="200" src="{{asset('images/logo.png')}}"/></a>
         </x-slot>
 
         <x-validation-errors class="mb-4" />

@@ -3,7 +3,8 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-           <!--  <x-authentication-card-logo />-->
+           
+           <a class="navbar-brand" href="#"><img width="200" src="{{asset('images/logo.png')}}"/></a>
         </x-slot>
 
         <x-validation-errors class="mb-4" />
@@ -18,7 +19,7 @@
 
             <div class="mt-4" >
                 <x-label for="phone" value="{{ __('phone') }}" />
-                <x-input style="border: solid red 1px" id="phone" class="block mt-1 w-full" type="number" name="phone" :value="old('phone')" required autocomplete="username" />
+                <x-input style="border: solid red 1px" id="phone" class="block mt-1 w-full" type="test" name="phone" :value="old('phone')" required autocomplete="username" />
             </div>
 
             <div class="mt-4">

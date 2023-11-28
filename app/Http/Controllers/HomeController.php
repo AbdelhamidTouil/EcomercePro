@@ -35,7 +35,8 @@ class HomeController extends Controller
        
         $usertype = Auth::user()->usertype;
         
-        $product = product::all();
+        $product = product::paginate(6);
+        
         if ($usertype == '1') {
             $totalProduct = product::all()->count();
             
@@ -64,7 +65,7 @@ class HomeController extends Controller
     public function index()
     {
         
-        $product = product::paginate(10);
+        $product = product::paginate(6);
         $comment = comment::orderby('id','desc')->get();
         $reply = reply::all();
         
@@ -324,4 +325,16 @@ public function product_sch (Request $request)
     $product = product::where('title', 'LIKE', "%$search_text%")->get();
     return view('home.products',compact('product','comment','reply'));
 }
+
+
+
+public function lon(){
+return view('lon');
+
+}
+
+public function test(){
+    return view('test');
+    
+    }
 }

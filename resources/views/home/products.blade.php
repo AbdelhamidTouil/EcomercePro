@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
+      <base href="/public">
       <!-- Basic -->
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,13 +21,30 @@
       <link href="home/css/style.css" rel="stylesheet" />
       <!-- responsive style -->
       <link href="home/css/responsive.css" rel="stylesheet" />
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-      
-      <script src="https://cdn.datatables.net/plug-ins/1.10.20/sorting/enum.js"></script>
+    
    </head>
    <body>
       <div class="hero_area">
          <!-- header section strats -->
+         
+
+<div class="top">
+   <div class="div1">Vendez sur Touilshop</div>
+   <div class="div2"> <i class="fa-solid fa-location-dot">&nbsp</i>Delivery to Morroco</div> 
+   <div> 
+
+       <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{__('msg.languages')}} &nbsp<i style="color: #F7444E" class="fa-solid fa-language"></i></a>
+           
+           <div class="dropdown-menu" aria-labelledby="dropdown01">
+             <a class="dropdown-item" href="{{url('/en/products')}}">{{__('msg.english')}}</a>
+             <a class="dropdown-item" href="{{url('/uz-Arab/products')}}">{{__('msg.arabe')}}</a> 
+         </div>
+         
+     </li>
+   </div>
+
+</div>
        @include('home.header')
        
          <!-- end header section -->
@@ -39,8 +57,14 @@
                <div>
                   <form action="{{url('product_sch')}}" method="GET">
                      @csrf
-                     <input type="text" name="search" placeholder="serach for something">
-                     <input type="submit" value="search">
+                     <div class="d-input">
+                        <span class="resize">
+                          <input type="text" name="search" placeholder="{{__('msg.search for something')}}"/>
+                        </span>
+                        <input type="submit" value="{{__('msg.search')}}">
+                        
+                        
+                      </div>
                   </form>
                </div>
             </div>
@@ -81,12 +105,13 @@
                         @endif
                         <h6>
                            ${{$products->price}}
+                           
                         </h6>
                      </div>
                   </div>
                </div>
             @endforeach
-         
+           
             </div>
             
          </div>
@@ -100,13 +125,7 @@
         <!-- end COMMENT section  -->
 
       <!-- footer end -->
-      <div class="cpy_">
-         <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
-         
-            Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-         
-         </p>
-      </div>
+     
 
 
       <script type="text/javascript">

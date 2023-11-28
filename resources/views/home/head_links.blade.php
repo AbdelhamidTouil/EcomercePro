@@ -21,4 +21,7 @@
       <link href="{{asset('home/css/style.css" rel="stylesheet')}}" />
       <!-- responsive style -->
       <link href="{{asset('home/css/responsive.css" rel="stylesheet')}}" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      
+      <script src="https://cdn.datatables.net/plug-ins/1.10.20/sorting/enum.js"></script>
    </head>

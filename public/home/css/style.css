@@ -1123,7 +1123,41 @@ form input[type="submit"]:focus {
     font-weight: 400;
 }
 
+
+
+    .top{
+        background-color: #D5D3D4;
+        display: flex;
+        justify-content:space-around;
+       /***********************************************************/ 
+    }
+  
+    li{
+        display: inline;
+    }
+    .div1 , .div2{
+        color: #F7444E;
+        font-size: 15px;
+        padding-top: 7px;
+
+    }
+    .div2 img{
+        width: 20px;
+        padding-top: 7px;
+    }
+    /* FOR SEARCH INPUT*/
+    .d-input {
+      display: flex;
+      gap: 10px;
+    }
+    .d-input input{
+      border-radius: 5px;
+    }
+    input[type=submit] {
+      width: 20em;  height: 3em;
+  }
+
 http://kute-themes.com/html/boutique/html/index.html
 https://template.hasthemes.com/noraure/noraure/index.html
 https://preview.hasthemes.com/xoss-preview/xoss/index.html
-
+<link rel="stylesheet" href="sha512-ZQKxM5Z+PmOVa/VmISvHcqlUgzPejY92+I+sur69qiB7Vd+dAaDNMwy7AnRr6HcFbYY4so1FFPBgugE5s2jm7Q==">

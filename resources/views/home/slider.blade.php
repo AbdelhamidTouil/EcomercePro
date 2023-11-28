@@ -11,17 +11,17 @@
                               <div class="detail-box">
                                  <h1>
                                     <span>
-                                    Sale 20% Off
+                                       {{__('msg.sale 20% Off')}}
                                     </span>
                                     <br>
-                                    On Everything
+                                    {{__('msg.on Everything')}}
                                  </h1>
                                  <p>
-                                    Discover the world's greatest brands        
-                                    <br>Fan-favorites, future-classics - if they shine, they're on Shop.                          </p>
+                                    {{__('msg.discover the worlds greatest brands')}}        
+                                    <br>{{__('msg.fan-favorites, future-classics - if they shine, theyre on Shop')}}.                          </p>
                                  <div class="btn-box">
                                     <a href="" class="btn1">
-                                    Shop Now
+                                       {{__('msg.shop Now')}}
                                     </a>
                                  </div>
                               </div>
@@ -29,6 +29,7 @@
                         </div>
                      </div>
                   </div>
+                 
                   <div class="carousel-item ">
                      <div class="container ">
                         <div class="row">
@@ -36,17 +37,17 @@
                               <div class="detail-box">
                                  <h1>
                                     <span>
-                                    Sale 20% Off
+                                       {{__('msg.sale 20% Off')}}
                                     </span>
                                     <br>
-                                    On Everything
+                                    {{__('msg.on Everything')}}
                                  </h1>
                                  <p>
-                                    Discover the world's greatest brands    
-                                    <br>Fan-favorites, future-classics - if they shine, they're on Shop.                              </p>
+                                    {{__('msg.discover the worlds greatest brands')}}        
+                                    <br>{{__('msg.fan-favorites, future-classics - if they shine, theyre on Shop')}}.                          </p>
                                  <div class="btn-box">
                                     <a href="" class="btn1">
-                                    Shop Now
+                                       {{__('msg.shop Now')}}
                                     </a>
                                  </div>
                               </div>
@@ -61,16 +62,17 @@
                               <div class="detail-box">
                                  <h1>
                                     <span>
-                                    Sale 20% Off
+                                       {{__('msg.sale 20% Off')}}
                                     </span>
                                     <br>
-                                    On Everything
+                                    {{__('msg.on Everything')}}
                                  </h1>
                                  <p>
-                                    Discover the world's greatest brands  <br>Fan-favorites, future-classics - if they shine, they're on Shop.                               </p>
+                                    {{__('msg.discover the worlds greatest brands')}}        
+                                    <br>{{__('msg.fan-favorites, future-classics - if they shine, theyre on Shop')}}.                          </p>
                                  <div class="btn-box">
                                     <a href="" class="btn1">
-                                    Shop Now
+                                       {{__('msg.shop Now')}}
                                     </a>
                                  </div>
                               </div>

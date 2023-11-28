@@ -2,7 +2,7 @@
          <div class="container">
             <div class="heading_container heading_center">
                <h2>
-                  Why Shop With Us
+                  {{__('msg.why Shop With Us')}}
                </h2>
             </div>
             <div class="row">
@@ -97,10 +97,10 @@
                      </div>
                      <div class="detail-box">
                         <h5>
-                           Fast Delivery
+                           {{__('msg.fast Delivery')}}
                         </h5>
                         <p>
-                           Get free shipping up to $15 on today's purchase
+                           {{__('msg.get free shipping')}}
                         </p>
                      </div>
                   </div>

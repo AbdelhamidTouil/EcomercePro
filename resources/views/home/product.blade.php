@@ -1,14 +1,24 @@
+
 <section class="product_section layout_padding">
          <div class="container">
             <div class="heading_container heading_center">
                <h2>
-                  Our <span>products</span>
+                  {{__('msg.our')}} <span>{{__('msg.products')}}</span>
                </h2>
                <div>
                   <form action="{{url('product_search')}}" method="GET">
                      @csrf
-                     <input type="text" name="search" placeholder="serach for something">
-                     <input type="submit" value="search">
+
+                     <div class="d-input">
+                        <span class="resize">
+                          <input type="text" name="search" placeholder="{{__('msg.search for something')}}"/>
+                        </span>
+                        <input type="submit" value="{{__('msg.search')}}">
+                        
+                        
+                      </div>
+                      
+                  
                   </form>
                </div>
             </div>
@@ -57,13 +67,21 @@
                         @endif
                         <h6>
                            ${{$products->price}}
+                           
                         </h6>
                      </div>
                   </div>
                </div>
             @endforeach
-         
+          
             </div>
-            
          </div>
+        
+
       </section>
+      <div class="d-flex justify-content-center">
+            
+         {{ $product->withQueryString()->links('pagination::bootstrap-5') }}
+
+         
+      </div>

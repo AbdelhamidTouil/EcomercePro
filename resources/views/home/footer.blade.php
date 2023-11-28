@@ -67,9 +67,9 @@
          </div>
       </footer>
       <div class="cpy_">
-         <p class="mx-auto">© 2023 All Rights Reserved By <a href="#"></a><br>
+         <p class="mx-auto">© 2023 {{__('msg.all Rights Reserved By ')}} <a href="#"></a><br>
          
-            Distributed By <a href="#" target="_blank">Abdelhamid touil</a>
+            {{__('msg.distributed By ')}} <a href="#" target="_blank">Abdelhamid touil</a>
          
          </p>
       </div>

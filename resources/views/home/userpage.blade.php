@@ -11,7 +11,7 @@
       <meta name="description" content="" />
       <meta name="author" content="" />
       <link rel="shortcut icon" href="images/favicon.png" type="">
-      <title>Touilshop</title>
+    
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="home/css/bootstrap.css" />
       <!-- font awesome style -->
@@ -29,6 +29,7 @@
       @include('sweetalert::alert')
       <div class="hero_area">
          <!-- header section strats -->
+         @include('home.topbar')
        @include('home.header')
        
          <!-- end header section -->
@@ -48,23 +49,16 @@
       
        <!-- START COMMENT section -->
 
-       @include('home.comment_reply')
+      <!-- @include('home.comment_reply')-->
 
 
-
-        <!-- end COMMENT section  -->
-
-      <!-- subscribe section -->
-      <!-- end subscribe section -->
-      <!-- client section -->
-    
-      <!-- end client section -->
       <!-- footer start -->
       @include('home.footer')
       <!-- footer end -->
   
+<!--comment script --> 
 
-      <script type="text/javascript">
+  <!--  <script type="text/javascript">
          function reply(caller){
             document.getElementById('commentId').value=$(caller).attr('data-Commentid');
 $('.replyDiv').insertAfter($(caller));
@@ -86,7 +80,8 @@ $('.replyDiv').hide();
             window.onbeforeunload = function(e) {
                 localStorage.setItem('scrollpos', window.scrollY);
             };
-        </script>
+        </script>-->
+        
       <!-- jQery -->
       <script src="home/js/jquery-3.4.1.min.js"></script>
       <!-- popper js -->
